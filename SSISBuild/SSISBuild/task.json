@@ -1,0 +1,72 @@
+{
+	"id": "58D667A3-3456-4530-80A0-DE4662A514F4",
+	"name": "SSISBuild",
+	"friendlyName": "SSIS Build",
+	"description": "Build SQL Server Integration Services solutions with the Visual Studio IDE.",
+	"helpMarkDown": "[More Information - Google](http://www.google.com) - Use this task to build SSIS packages to be deployed with Release Manager.",
+	"category": "Build",
+	"author": "Mick Letofsky",
+	"visibility": [
+				"Build"
+				], 	
+	"version": {
+      "Major": 1,
+      "Minor": 1,
+      "Patch": 0
+   },
+   "minimumAgentVersion": "1.92.0",
+	"demands": [
+	],    
+	"inputs": [
+		{      
+			"name": "solution",
+			"label": "Project",     
+			"defaultValue": "",
+			"required": true,
+			"type": "filePath",
+			"helpMarkDown": "Relative path from repo root of solution(s) to run.  Wildcards can be used. "
+		},
+		{
+		  "name": "VisualStudioVersion",
+		  "label": "Required Visual Studio",      
+		  "options": {
+			"vs2012": "Visual Studio 2012",
+			"vs2013": "Visual Studio 2013",
+			"vs2015": "Visual Studio 2015"
+		  },
+		  "defaultValue": "vs2012",
+		  "required": true,
+		  "type": "pickList",
+		  "helpMarkDown": "Choose version of Visual Studio to use to build your solution. Note that SSIS-BI must be installed, as well as expected version of Visual Studio."
+		},	
+		{
+			"name": "buildtype",
+			"type": "pickList",
+			"label": "Build Type",
+			"defaultValue": "",
+			"required": true,
+			"options": {
+				"/build": "/build - Builds the specified project",
+				"/rebuild ": "/rebuild - Cleans and then builds the specified project"
+			},
+			"helpMarkDown": "Determines what type of Visual Studio Build is executed."
+		},
+		{
+			 "name": "buildConfiguration",
+			 "type": "string",
+			 "label": "Configuration",
+			 "defaultValue": "",
+			 "required": true
+		}				
+   ],
+	"instanceNameFormat": "SSIS Build $(SSISBuild)",
+	"execution": 
+	{
+		"PowerShell": 
+		{
+			"target": "$(currentDirectory)\\SSISBuild.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}
