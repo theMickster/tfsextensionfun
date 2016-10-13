@@ -1,0 +1,74 @@
+{
+	"id": "206450CB-B94B-403F-8141-912B6DE579C7",
+	"name": "SQLBackupDatabase",
+	"friendlyName": "SQL Backup Database",
+	"description": "Backup a SQL database to the local server using SQLPS.",
+	"helpMarkDown": "[More Information - Google](http://www.google.com)",
+	"category": "Utility",
+	"visibility": ["Build","Release"],   
+	"author": "Mick Letofsky",
+	"version": {"Major": 1, "Minor": 1, "Patch": 1 },
+	"minimumAgentVersion": "1.92.0",
+	"demands": [],   
+   "inputs": [
+		{
+			"name": "instance",
+			"type": "string",
+			"label": "SQL Server Instance Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "The SQL instance that contains the database to backup"
+		},
+		{
+			"name": "database",
+			"type": "string",
+			"label": "Database Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "The SQL database to backup"
+		},
+		{
+			"name": "filename",
+			"type": "string",
+			"label": "Backup File Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "The name of the SQL backup file. Note: file extension is determined by the backup type."
+		},
+		{
+			"name": "BackupAction",
+			"type": "radio",
+			"label": "Backup Action",
+			"required": true,
+			"defaultValue": "database",
+			"options": {
+				"database": "Database Backup",
+				"log": "Transaction Log Backup"
+			},
+			"helpMarkDown": "Specifies the type of backup operation to perform. This parameter is required."
+		},	  		
+		{
+			"name": "BackupSetDescription",
+			"type": "string",
+			"label": "Backup Set Description",
+			"required": false,
+			"helpMarkDown": "Specifies the description of the backup set. This parameter is optional."
+		},	
+		{
+			"name": "CopyOnlyString",
+			"type": "boolean",
+			"label": "Copy Only Backup?",
+			"defaultValue": "true",
+			"required": true,
+			"helpMarkDown": "Indicates that the backup is a copy-only backup. A copy-only backup does not affect the normal sequence of your regularly scheduled conventional backups."
+		}
+   ],
+	"instanceNameFormat": "SQL Backup Database $(SQLBackupDatabase)",
+	"execution": {
+		"PowerShell": {
+		"target": "$(currentDirectory)\\BackupSQLDatabase.ps1",
+		"argumentFormat": "",
+		"workingDirectory": "$(currentDirectory)"
+	  }
+	}
+}
