@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSISBuild", "SSISBuild", "{EB5A4B8E-A010-4B63-A86F-C324601E8F10}"
+	ProjectSection(SolutionItems) = preProject
+		SSISBuild\README.md = SSISBuild\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSISBuild", "SSISBuild", "{7C755081-8133-4E6F-BD58-EAAEBF6753EB}"
+	ProjectSection(SolutionItems) = preProject
+		SSISBuild\SSISBuild\[Content_Types].xml = SSISBuild\SSISBuild\[Content_Types].xml
+		SSISBuild\SSISBuild\icon.png = SSISBuild\SSISBuild\icon.png
+		SSISBuild\SSISBuild\SSISBuild.ps1 = SSISBuild\SSISBuild\SSISBuild.ps1
+		SSISBuild\SSISBuild\task.json = SSISBuild\SSISBuild\task.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLBackupDatabase", "SQLBackupDatabase", "{CAD892FF-5BB7-410E-8C80-4DDB1F32D4C3}"
+	ProjectSection(SolutionItems) = preProject
+		SQLBackupDatabase\README.md = SQLBackupDatabase\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLBackupDatabase", "SQLBackupDatabase", "{CFAC89A3-7BDF-45AD-BBC9-A766A51F673F}"
+	ProjectSection(SolutionItems) = preProject
+		SQLBackupDatabase\SQLBackupDatabase\[Content_Types].xml = SQLBackupDatabase\SQLBackupDatabase\[Content_Types].xml
+		SQLBackupDatabase\SQLBackupDatabase\BackupSQLDatabase.ps1 = SQLBackupDatabase\SQLBackupDatabase\BackupSQLDatabase.ps1
+		SQLBackupDatabase\SQLBackupDatabase\icon.png = SQLBackupDatabase\SQLBackupDatabase\icon.png
+		SQLBackupDatabase\SQLBackupDatabase\task.json = SQLBackupDatabase\SQLBackupDatabase\task.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Upload2AzureFileStorage", "Upload2AzureFileStorage", "{21EE3E08-035C-4BC6-9A5D-81EDD2503488}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Upload2AzureFileStorage", "Upload2AzureFileStorage", "{61DD71AF-0050-47EF-A708-FABABFE5A4C6}"
+	ProjectSection(SolutionItems) = preProject
+		Upload2AzureFileStorage\Upload2AzureFileStorage\[Content_Types].xml = Upload2AzureFileStorage\Upload2AzureFileStorage\[Content_Types].xml
+		Upload2AzureFileStorage\Upload2AzureFileStorage\icon.png = Upload2AzureFileStorage\Upload2AzureFileStorage\icon.png
+		Upload2AzureFileStorage\Upload2AzureFileStorage\task.json = Upload2AzureFileStorage\Upload2AzureFileStorage\task.json
+		Upload2AzureFileStorage\Upload2AzureFileStorage\Upload2AzureFileStorage.ps1 = Upload2AzureFileStorage\Upload2AzureFileStorage\Upload2AzureFileStorage.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSISDeployDatamart", "SSISDeployDatamart", "{2A55CE46-8B18-4408-A8DC-4B6E99700C8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSISDeployDatamart", "SSISDeployDatamart", "{98BA9378-6AAC-4DFA-9E20-83F72C75F48B}"
+	ProjectSection(SolutionItems) = preProject
+		SSISDeployDatamart\SSISDeployDatamart\[Content_Types].xml = SSISDeployDatamart\SSISDeployDatamart\[Content_Types].xml
+		SSISDeployDatamart\SSISDeployDatamart\icon.png = SSISDeployDatamart\SSISDeployDatamart\icon.png
+		SSISDeployDatamart\SSISDeployDatamart\ScriptDeployDatamartSSISPackages.ps1 = SSISDeployDatamart\SSISDeployDatamart\ScriptDeployDatamartSSISPackages.ps1
+		SSISDeployDatamart\SSISDeployDatamart\task.json = SSISDeployDatamart\SSISDeployDatamart\task.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLRestoreDatabase", "SQLRestoreDatabase", "{84408FF4-7B95-4C39-B072-10C779586D23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLRestoreDatabase", "SQLRestoreDatabase", "{74662DD0-7DC3-4F08-940F-FE026820DD78}"
+	ProjectSection(SolutionItems) = preProject
+		SQLRestoreDatabase\SQLRestoreDatabase\[Content_Types].xml = SQLRestoreDatabase\SQLRestoreDatabase\[Content_Types].xml
+		SQLRestoreDatabase\SQLRestoreDatabase\icon.png = SQLRestoreDatabase\SQLRestoreDatabase\icon.png
+		SQLRestoreDatabase\SQLRestoreDatabase\RestoreSQLDatabase.ps1 = SQLRestoreDatabase\SQLRestoreDatabase\RestoreSQLDatabase.ps1
+		SQLRestoreDatabase\SQLRestoreDatabase\task.json = SQLRestoreDatabase\SQLRestoreDatabase\task.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7C755081-8133-4E6F-BD58-EAAEBF6753EB} = {EB5A4B8E-A010-4B63-A86F-C324601E8F10}
+		{CFAC89A3-7BDF-45AD-BBC9-A766A51F673F} = {CAD892FF-5BB7-410E-8C80-4DDB1F32D4C3}
+		{61DD71AF-0050-47EF-A708-FABABFE5A4C6} = {21EE3E08-035C-4BC6-9A5D-81EDD2503488}
+		{98BA9378-6AAC-4DFA-9E20-83F72C75F48B} = {2A55CE46-8B18-4408-A8DC-4B6E99700C8C}
+		{74662DD0-7DC3-4F08-940F-FE026820DD78} = {84408FF4-7B95-4C39-B072-10C779586D23}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,81 @@
+{
+	"id": "B86F00BF-5219-4721-A2B2-8723930D17BC",
+	"name": "SSISDeployDatamart",
+	"friendlyName": "SSIS Deploy Datamart packages",
+	"description": "Deploys BatchAuditEnd, BatchAuditStart, Expunge_patients_from_acquisition, Load_Acquisition, Load_Base, and Load_Query SSIS packages.",
+	"helpMarkDown": "[More Information - Google](http://www.google.com)",
+	"category": "Deploy",
+	"visibility": [
+				"Build",
+				"Release"
+				],   
+   "author": "Mick Letofsky",
+   "version": {
+      "Major": 1,
+      "Minor": 3,
+      "Patch": 2
+   },
+   "minimumAgentVersion": "1.92.0",
+	"demands": [
+	],  
+	"inputs": [
+		{   
+			"name": "WorkingDirectory",
+			"label": "Working Directory to SSIS",     
+			"defaultValue": "$/",
+			"required": true,
+			"type": "filePath",
+			"helpMarkDown": "Working Directory to the SSIS folder."
+		},
+		{      
+			"name": "SQLServerName",
+			"label": "SQL Server Name",     
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "Name of the SQL Server instance."
+		},
+		{
+		  "name": "ISCatalogFolderName",
+		  "label": "SSIS Catalog Folder Name",
+		  "defaultValue": "",
+		  "required": true,
+		  "type": "string",
+		  "helpMarkDown": "Name of the SSIS Catalog Folder."
+		},	
+		{
+			"name": "DBNameOLTP",
+			"label": "OLTP Database Name",
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "Name of the OLTP Database."
+		},
+		{
+			"name": "DBNameAcq",
+			"label": "Acquisition Database Name",
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "Name of the Acquisition Database."
+		},
+		{
+			"name": "DBNameQuery",
+			"label": "Query Database Name",
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "Name of the Query Database."
+		}		
+   ],
+	"instanceNameFormat": "SSIS Deploy Datamart packages $(SSISDeployDatamart)",
+	"execution": 
+	{
+		"PowerShell": 
+		{
+			"target": "$(currentDirectory)\\ScriptDeployDatamartSSISPackages.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}

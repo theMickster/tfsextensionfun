@@ -1,0 +1,105 @@
+{
+	"id": "C3A4235F-E02A-455D-8F88-ED634710686C",
+	"name": "Upload2AzureFileStorage",
+	"friendlyName": "Upload 2 Azure File Storage",
+	"description": "Upload file or folders from local storage to Azure File Storage using AzCopy.",
+	"helpMarkDown": "[For More Information on AzCopy] (https://docs.microsoft.com/en-us/azure/storage/storage-use-azcopy)",
+	"category": "Utility",
+	"visibility": [
+				"Build",
+				"Release"
+				],   
+   "author": "Mick Letofsky",
+   "version": {
+      "Major": 1,
+      "Minor": 2,
+      "Patch": 1
+   },
+   "minimumAgentVersion": "1.92.0",
+	"demands": [
+	],  
+	"inputs": [
+		{
+			"name": "directory",
+			"label": "Local Directory",     
+			"defaultValue": "",
+			"required": true,
+			"type": "filePath",
+			"helpMarkDown": "Path to the files or folders to upload to Azure File Storage."
+		},	
+		{
+		  "name": "azureSubscriptionType",
+		  "label": "Azure Subscription Type",      
+		  "options": {
+			"azuregovernment": "Azure Government",
+			"azurepublic": "Azure Public"			
+		  },
+		  "defaultValue": "azuregovernment",
+		  "required": true,
+		  "type": "pickList",
+		  "helpMarkDown": "Select the type of Azure Subscription. Current support is only for Azure Public and Azure Government."
+		},
+		{
+		  "name": "serviceType",
+		  "label": "Storage Service Type",      
+		  "options": {
+			"file": "File"
+		  },
+		  "defaultValue": "file",
+		  "required": true,
+		  "type": "pickList",
+		  "helpMarkDown": "Select the Azure storage type. Current support is only for Azure file storage"
+		},		
+		{
+			"name": "storageAccount",
+			"label": "Azure Storage Account",     
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "Name of the destination Azure Storage account."
+		},
+		{
+			"name": "fileShareName",
+			"label": "File Share Name",     
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "Name of the destination file share."
+		},
+		{
+			"name": "filePath",
+			"label": "File Path",     
+			"defaultValue": "",
+			"required": false,
+			"type": "string",
+			"helpMarkDown": "The destination folder structure. For example, Tools/MyTest/ will upload files and folders to %StorageEndpoint%/%ShareName%/Tools/MyTest/ "
+		},		
+		{
+			"name": "storageAccountKey",
+			"label": "Storage Account Key",     
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "The primary or secondary storage account key for the Azure storage account. Please use secret/hidden variables thus preventing storing data in clear text."
+		},
+		{
+			"name": "journalFileLocation",
+			"label": "Journal File Location",
+			"defaultValue": "",
+			"required": true,
+			"type": "string",
+			"helpMarkDown": "The location on the build server where Azure AzCopy with create a temporary journal file."
+		}	
+		
+	],	
+	"instanceNameFormat": "Upload 2 Azure File Storage $(Upload2AzureFileStorage)",
+	"execution": 
+	{
+		"PowerShell": 
+		{
+			"target": "$(currentDirectory)\\Upload2AzureFileStorage.ps1",
+			"argumentFormat": "",
+			"workingDirectory": "$(currentDirectory)"
+		}
+	}
+}

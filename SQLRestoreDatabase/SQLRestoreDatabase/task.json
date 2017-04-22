@@ -1,0 +1,51 @@
+{
+    "id": "5E357A84-47D1-4166-B437-DA8DE97608EC",
+    "name": "SQLRestoreDatabase",
+    "friendlyName": "SQL Restore Database",
+    "description": "Restores a SQL database to a server using SQLPS.",
+    "helpMarkDown": "[More Information - Google](http://www.google.com)",
+    "category": "Utility",
+    "visibility": [ "Build", "Release" ],
+    "author": "Mick Letofsky",
+    "version": { "Major": 1, "Minor": 1, "Patch": 0 },
+    "minimumAgentVersion": "1.92.0",
+    "demands": [ ],
+    "inputs": [
+		{
+			"name": "instance",
+			"type": "string",
+			"label": "SQL Server Instance Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "The SQL instance that contains the database to restore"
+		},
+		{
+			"name": "database",
+			"type": "string",
+			"label": "Database Name",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "The SQL database to restore"
+		},
+		{
+			"name": "fullFilePath",
+			"type": "string",
+			"label": "Path",
+			"defaultValue": "",
+			"required": true,
+			"helpMarkDown": "The full name of the SQL backup file. The loction can be local to the SQL Server or on a remote network share."
+		}
+    ],
+    "instanceNameFormat"
+    :
+    "SQL Restore Database $(SQLRestoreDatabase)",
+    "execution"
+    :
+    {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\RestoreSQLDatabase.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
